@@ -47,6 +47,20 @@ class App extends Component {
       padding: '8px',
       cursor: 'pointer',
     }
+
+    let persons = null;
+    if (this.state.showPersons) {
+      persons = (
+        <div>
+          { this.state.people.map(person => {
+            return <Person 
+              name={person.name}
+              age={person.age} 
+              />
+          })}
+        </div> 
+      )
+    }
     return (
       <div className="App">
         <h1>I'm a React App!</h1>
@@ -55,25 +69,7 @@ class App extends Component {
           onClick={this.togglePersonHandler}>
           Toggle Persons
         </button>
-        { this.state.showPersons ? 
-          <div>
-          <Person
-            name={this.state.people[0].name}
-            age={this.state.people[0].age}
-            changed={this.nameChangedHandler}
-          />
-          <Person
-            name={this.state.people[1].name}
-            age={this.state.people[1].age}
-            click={this.switchNameHandler.bind(this, 'Max!!!')}>
-            My hobbies: Reading
-          </Person>
-          <Person
-            name={this.state.people[2].name}
-            age={this.state.people[2].age}
-          />
-        </div> : null
-        }
+        {persons}
       </div>
     );
   }
