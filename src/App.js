@@ -41,20 +41,6 @@ class App extends Component {
     });
   }
   render() {
-
-    const style = {
-      backgroundColor: 'green',
-      font: 'inherit',
-      border: '1px solid blue',
-      color: 'white',
-      padding: '8px',
-      cursor: 'pointer',
-      // ':hover': { // RADIUM
-      //   backgroundColor: 'lightgreen',
-      //   color: 'black',
-      // }
-    }
-
     let persons = null;
     if (this.state.showPersons) {
       persons = (
