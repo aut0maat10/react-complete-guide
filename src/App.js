@@ -70,11 +70,6 @@ class App extends Component {
           })}
         </div> 
       )
-      style.backgroundColor = 'red';
-      // style[':hover'] = {
-      //   backgroundColor: 'salmon',
-      //     color: 'black',
-      // }
     }
 
     const assignedClasses = [];
@@ -90,7 +85,6 @@ class App extends Component {
         <h1>I'm a React App!</h1>
         <p className={assignedClasses.join(' ')}>This is really working!</p>
         <button 
-          style={style}
           onClick={this.togglePersonHandler}>
           Toggle Persons
         </button>
